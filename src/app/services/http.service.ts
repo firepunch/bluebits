@@ -31,7 +31,7 @@ const TEST_DATA = {
     "compartment": {
       "compartment_id": 909,
       "compartment_number": 104,
-      "pickup_code": 288234123,
+      "pickup_code": "288-234-123",
       "is_open": false
     }
   }
