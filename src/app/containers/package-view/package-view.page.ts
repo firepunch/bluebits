@@ -11,12 +11,12 @@ import {
 
 @Component({
   selector: 'package-view',
-  templateUrl: './package-view.component.html',
-  styleUrl: './package-view.component.scss',
+  templateUrl: './package-view.page.html',
+  styleUrl: './package-view.page.scss',
   standalone: true,
   imports: [IonButton, IonContent, IonBadge, IonIcon, IonGrid, IonRow, IonCol]
 })
-export class PackageViewComponent implements OnInit {
+export class PackageViewPage implements OnInit {
   package?: Package = undefined;
   delivery?: Delivery = undefined;
   httpService = inject(HttpService)
