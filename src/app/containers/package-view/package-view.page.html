@@ -1,13 +1,12 @@
-<!-- <ng-container *ngIf="package?.length; else emptyState"> -->
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" *ngIf="package && delivery; else emptyState">
   <ion-icon name="chevron-back" aria-label="back button" class="back-button"></ion-icon>
 
   <ion-grid class="ion-no-padding ion-margin-vertical page-container">
     <ion-row class="ion-justify-content-between ion-align-items-center">
       <ion-col>
-        <h1 class="page-title">Delivery #{{package?.package_id}}</h1>
+        <h1 class="page-title">Delivery #{{package.package_id}}</h1>
       </ion-col>
-      <ion-badge class="delivery-badge" color="tertiary">{{package?.package_status}}</ion-badge>
+      <ion-badge class="delivery-badge" color="tertiary">{{package.package_status}}</ion-badge>
     </ion-row>
   </ion-grid>
 
@@ -16,11 +15,11 @@
     <ion-grid class="ion-no-padding">
       <ion-row class="ion-justify-content-start ion-align-items-center">
         <ion-col size="auto" class="ion-padding-end">
-          <img class="delivery-thumbnail" src="{{delivery?.shipper?.shipper_image}}" alt="photo of shipper">
+          <img class="delivery-thumbnail" src="{{delivery.shipper.shipper_image}}" alt="photo of shipper">
         </ion-col>
         <ion-col>
-          <p class="delivery-name">{{delivery?.shipper?.shipper_name}}</p>
-          <p class="delivery-time">{{delivery?.delivered_at}}</p>
+          <p class="delivery-name">{{delivery.shipper.shipper_name}}</p>
+          <p class="delivery-time">{{delivery.delivered_at}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -75,8 +74,9 @@
     </ion-grid>
   </section>
 
-  <!-- <ng-container *ngIf="!delivery?.compartment?.is_open"> -->
-  <ion-button expand="block" size="large" class="unlock-button">Unlock Compartment</ion-button>
+  <ng-container *ngIf="!delivery?.compartment?.is_open">
+    <ion-button expand="block" size="large" class="unlock-button">Unlock Compartment</ion-button>
+  </ng-container>
 </ion-content>
 
 <ng-template #emptyState>
