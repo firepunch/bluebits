@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@capacitor/clipboard": "^6.0.0",
     "@ionic/angular": "^8.2.5",
     "date-fns": "^3.6.0",
     "ionicons": "^7.4.0",
