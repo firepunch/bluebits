@@ -1,0 +1,1 @@
+export type CompartmentContent = Array<string | number>;
