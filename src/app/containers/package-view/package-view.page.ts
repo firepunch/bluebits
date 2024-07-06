@@ -8,17 +8,19 @@ import { chevronBack, homeOutline, mailOutline } from 'ionicons/icons';
 import {
   IonButton, IonContent, IonBadge, IonIcon, IonGrid, IonRow, IonCol
 } from '@ionic/angular/standalone';
+import { CompartmentItem } from '../../components/compartment-item/compartment-item.components';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'package-view',
   templateUrl: './package-view.page.html',
   styleUrl: './package-view.page.scss',
   standalone: true,
-  imports: [IonButton, IonContent, IonBadge, IonIcon, IonGrid, IonRow, IonCol]
+  imports: [CommonModule, IonButton, IonContent, IonBadge, IonIcon, IonGrid, IonRow, IonCol, CompartmentItem]
 })
 export class PackageViewPage implements OnInit {
-  package?: Package = undefined;
-  delivery?: Delivery = undefined;
+  package?: Package;
+  delivery?: Delivery;
   httpService = inject(HttpService)
   constructor() {
     addIcons({ chevronBack, homeOutline, mailOutline })

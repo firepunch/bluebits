@@ -27,31 +27,24 @@
   </section>
 
   <section class="compartment-container">
-    <div class="compartment-item">
-      <p class="compartment-title">Location</p>
-      <div class="compartment-content">
-        <p>{{delivery?.delivery_location}}</p>
-        <p>{{delivery?.delivery_address}}</p>
-      </div>
-    </div>
+    <compartment-item
+      title="Location"
+      [contents]="[this.delivery.delivery_location, this.delivery.delivery_address]">
+    </compartment-item>
 
     <ion-grid class="ion-no-padding ion-margin-vertical">
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col>
-          <div class="compartment-item">
-            <p class="compartment-title">Pick-up Code</p>
-            <div class="compartment-content compartment-highlight">
-              <p>{{delivery?.compartment?.pickup_code}}</p>
-            </div>
-          </div>
+          <compartment-item 
+            title="Pick-up Code" 
+            [contents]="[delivery.compartment.pickup_code]">
+          </compartment-item>
         </ion-col>
         <ion-col>
-          <div class="compartment-item">
-            <p class="compartment-title">Compartment</p>
-            <div class="compartment-content compartment-highlight">
-              <p>{{delivery?.compartment?.compartment_number}}</p>
-            </div>
-          </div>
+          <compartment-item 
+            title="Compartment" 
+            [contents]="[delivery.compartment.compartment_number]">
+          </compartment-item>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -87,7 +80,7 @@
 </ion-content>
 
 <ng-template #emptyState>
-  <div class="card-shadow flex-column contact-container empty-state d-flex align-items-center justify-content-center">
+  <div>
     <h4>There is no package...</h4>
   </div>
 </ng-template>
