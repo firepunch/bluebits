@@ -2,12 +2,15 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Package } from '../../models/Package';
 import { HttpService } from '../../services/http.service';
 import { Delivery } from '../../models/Delivery';
-import {format} from 'date-fns'
+import { format } from 'date-fns';
+import { IonContent, IonButton, IonBadge } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'package-view',
   templateUrl: './package-view.component.html',
-  styleUrl: './package-view.component.scss'
+  styleUrl: './package-view.component.scss',
+  standalone: true,
+  imports: [IonContent, IonButton, IonBadge]
 })
 export class PackageViewComponent implements OnInit {
   package?: Package = undefined;

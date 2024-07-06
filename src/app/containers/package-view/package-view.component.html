@@ -1,8 +1,10 @@
 <!-- <ng-container *ngIf="package?.length; else emptyState"> -->
 <div>
+  <ion-button>Default</ion-button>
+
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h1 class="package-view-title">Delivery #{{package?.package_id}}</h1>
-    <span class="badge rounded-pill badge-primary package-status">{{package?.package_status}}</span>
+    <ion-badge slot="end">{{package?.package_status}}</ion-badge>
   </div>
   <div>
     <h5 class="delivery-details-title">Delivery Details</h5>
