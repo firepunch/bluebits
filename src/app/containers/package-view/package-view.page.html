@@ -26,25 +26,22 @@
   </section>
 
   <section class="compartment-container">
-    <compartment-item
-      title="Location"
-      [contents]="[this.delivery.delivery_location, this.delivery.delivery_address]">
+    <compartment-item title="Location">
+      <p>{{delivery.delivery_location}}</p>
+      <p>{{delivery.delivery_address}}</p>
     </compartment-item>
-
     <ion-grid class="ion-no-padding ion-margin-vertical">
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col>
-          <compartment-item 
-            title="Pick-up Code" 
-            [contents]="[delivery.compartment.pickup_code]">
+          <compartment-item title="Pick-up Code" type="code">
+            <p class="compartment-highlight">{{delivery.compartment.pickup_code}}</p>
+            <ion-icon id="open-toast" name="copy-outline" class="copy-icon" (click)="onCopyPickupCode()"></ion-icon>
+            <ion-toast trigger="open-toast" message="Copied" [duration]="2000"></ion-toast>
           </compartment-item>
-          <ion-icon id="open-toast" name="copy-outline" (click)="onCopyPickupCode()"></ion-icon>
-          <ion-toast trigger="open-toast" message="Copied" [duration]="2000"></ion-toast>
         </ion-col>
         <ion-col>
-          <compartment-item 
-            title="Compartment" 
-            [contents]="[delivery.compartment.compartment_number]">
+          <compartment-item title="Compartment">
+            <p class="compartment-highlight">{{delivery.compartment.compartment_number}}</p>
           </compartment-item>
         </ion-col>
       </ion-row>

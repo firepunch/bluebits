@@ -11,7 +11,7 @@ import { CompartmentContent } from '../../models/Component';
 })
 export class CompartmentItem implements OnInit {
   @Input({ required: true }) title?: string;
-  @Input({ required: true }) contents?: CompartmentContent;
+  @Input() type?: string;
   ngOnInit(): void {
   }
 }

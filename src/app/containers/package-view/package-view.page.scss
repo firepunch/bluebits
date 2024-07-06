@@ -10,8 +10,8 @@
     font-weight: 600;
   }
   .delivery-badge {
-    font-size: 12px;
-    padding: 0.25rem 0.4rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
     border-radius: 15px;
     text-transform: capitalize;
   }
@@ -35,9 +35,21 @@
   }
 }
 
-.compartment-container {
-  font-size: 1.1rem;
-  margin-bottom: 4rem;
+.compartment {
+  &-container {
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+
+    .copy-icon {
+      margin-left: 6px;
+    }
+  }
+  &-highlight {
+    display: inline-block;
+    color: #0d6efd;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
 }
 
 .unlock-button {
