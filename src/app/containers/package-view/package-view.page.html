@@ -38,6 +38,8 @@
             title="Pick-up Code" 
             [contents]="[delivery.compartment.pickup_code]">
           </compartment-item>
+          <ion-icon id="open-toast" name="copy-outline" (click)="onCopyPickupCode()"></ion-icon>
+          <ion-toast trigger="open-toast" message="Copied" [duration]="2000"></ion-toast>
         </ion-col>
         <ion-col>
           <compartment-item 
