@@ -4,7 +4,7 @@ import { HttpService } from '../../services/http.service';
 import { Delivery } from '../../models/Delivery';
 import { format } from 'date-fns';
 import { addIcons } from 'ionicons';
-import { chevronBack } from 'ionicons/icons';
+import { chevronBack, homeOutline, mailOutline } from 'ionicons/icons';
 import {
   IonButton, IonContent, IonBadge, IonIcon, IonGrid, IonRow, IonCol
 } from '@ionic/angular/standalone';
@@ -21,7 +21,7 @@ export class PackageViewComponent implements OnInit {
   delivery?: Delivery = undefined;
   httpService = inject(HttpService)
   constructor() {
-    addIcons({ chevronBack })
+    addIcons({ chevronBack, homeOutline, mailOutline })
   }
   ngOnInit(): void {
     const TEST_PACKAGE_ID = 487303

@@ -1,63 +1,81 @@
-.package-view-title {
-  margin: 0;
+.back-button {
+  font-size: 2rem;
 }
 
-.package-status {
-  color: var(--bs-pink);
-  background-color: #f7d6e6;
-  text-transform: capitalize;
+.page-container {
+  .page-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .delivery-badge {
+    font-size: 12px;
+    padding: 0.25rem 0.4rem;
+    border-radius: 15px;
+    text-transform: capitalize;
+  }
 }
 
-.sm-title {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.btn-primary {
-  width: 100%;
-}
-
-.delivery-details-title {
-  margin-bottom: 12px;
+.delivery {
+  &-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+  }
+  &-thumbnail {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5px;
+  }
+  &-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
 }
 
 .banner-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 24px;
-  margin: 12px 0;
-
-  .bi {
-    text-align: center;
-    min-width: 52px;
-    font-size: 24px;
+  &-item {
+    padding: 1rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
   }
 
-  .banner-title {
-    font-size: 14px;
+  &-icon {
+    font-size: 2.5rem;
+  }
+
+  &-title {
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 0.3rem;
   }
 
-  .banner-desc {
+  &-desc {
     color: gray;
-    line-height: 1.25;
   }
 }
 
-.compartment-info {
-  .compartment-title {
-    
-  }
-  .compartment-desc {
-    font-size: 16px;
-    font-weight: 600;
-    color: #0d6efd;
+.compartment {
+  &-container {
+    font-size: 1.1rem;
   }
 
-  .bi {
-    padding-left: 4px;
+  &-title {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
   }
+
+  &-content {
+    font-size: 1.1rem;
+  }
+
+  &-highlight p {
+    color: #0d6efd;
+    font-size: 1.4rem;
+  }
+}
+
+.unlock-button {
+  text-transform: capitalize;
 }

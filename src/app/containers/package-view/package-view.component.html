@@ -1,76 +1,89 @@
 <!-- <ng-container *ngIf="package?.length; else emptyState"> -->
 <ion-content class="ion-padding">
-  <ion-icon name="chevron-back"></ion-icon>
+  <ion-icon name="chevron-back" aria-label="back button" class="back-button"></ion-icon>
 
-  <ion-grid class="ion-no-padding">
+  <ion-grid class="ion-no-padding ion-margin-vertical page-container">
     <ion-row class="ion-justify-content-between ion-align-items-center">
       <ion-col>
-        <h1 class="package-view-title">Delivery #{{package?.package_id}}</h1>
+        <h1 class="page-title">Delivery #{{package?.package_id}}</h1>
       </ion-col>
-      <ion-col size="ion-justify-self-right">
-        <ion-badge color="tertiary">{{package?.package_status}}</ion-badge>
-      </ion-col>
+      <ion-badge class="delivery-badge" color="tertiary">{{package?.package_status}}</ion-badge>
     </ion-row>
   </ion-grid>
 
-  <section class="delivery-container">
-    <h5 class="delivery-title">Delivery Details</h5>
+  <section class="delivery-container ion-margin-vertical">
+    <p class="delivery-title">Delivery Details</p>
     <ion-grid class="ion-no-padding">
       <ion-row class="ion-justify-content-start ion-align-items-center">
-        <ion-col class="ion-padding-end">
+        <ion-col size="auto" class="ion-padding-end">
           <img class="delivery-thumbnail" src="{{delivery?.shipper?.shipper_image}}" alt="photo of shipper">
         </ion-col>
         <ion-col>
-          <p class="delivery-name">Delivery from {{delivery?.shipper?.shipper_name}}</p>
+          <p class="delivery-name">{{delivery?.shipper?.shipper_name}}</p>
           <p class="delivery-time">{{delivery?.delivered_at}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>
   </section>
 
-  <section class="banner-button-container">
-    <div class="banner-button-item">
-      <i class="banner-button-icon"></i>
-      <div>
-        <p class="banner-button-title">Register Your Unit</p>
-        <p class="banner-button-desc">Enable delivery to your specific unit by registering it with BlueBox.</p>
-      </div>
-    </div>
-    <div class="banner-button-item">
-      <i class="banner-button-icon"></i>
-      <div>
-        <p class="banner-button-title">Contact Support Team</p>
-        <p class="banner-button-desc">Get help with any questions or issues you're experiencing.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="compartment-container">
-    <ul>
-      <li class="compartment-item">
-        <p class="compartment-title">Location</p>
-        <div class="compartment-content">
-          <p>{{delivery?.delivery_location}}</p>
-          <p>{{delivery?.delivery_address}}</p>
-        </div>
-      </li>
-      <li class="compartment-item">
-        <p class="compartment-title">Pick-up Code</p>
-        <div class="compartment-content">
-          <p>{{delivery?.compartment?.pickup_code}}</p>
-        </div>
-      </li>
-      <li class="compartment-item">
-        <p class="compartment-title">Compartment</p>
-        <div class="compartment-content">
-          <p>{{delivery?.compartment?.compartment_number}}</p>
-        </div>
-      </li>
-    </ul>
+    <div class="compartment-item">
+      <p class="compartment-title">Location</p>
+      <div class="compartment-content">
+        <p>{{delivery?.delivery_location}}</p>
+        <p>{{delivery?.delivery_address}}</p>
+      </div>
+    </div>
+
+    <ion-grid class="ion-no-padding ion-margin-vertical">
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col>
+          <div class="compartment-item">
+            <p class="compartment-title">Pick-up Code</p>
+            <div class="compartment-content compartment-highlight">
+              <p>{{delivery?.compartment?.pickup_code}}</p>
+            </div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="compartment-item">
+            <p class="compartment-title">Compartment</p>
+            <div class="compartment-content compartment-highlight">
+              <p>{{delivery?.compartment?.compartment_number}}</p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+    
+  <section class="banner-button-container">
+    <ion-grid class="banner-button-item ion-margin-vertical">
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size="auto" class="ion-padding-end">
+          <ion-icon name="home-outline" aria-hidden="true" class="banner-button-icon"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <p class="banner-button-title">Register Your Unit</p>
+          <p class="banner-button-desc">Enable delivery to your specific unit by registering it with BlueBox.</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="banner-button-item ion-margin-vertical">
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size="auto" class="ion-padding-end">
+          <ion-icon name="mail-outline" aria-hidden="true" class="banner-button-icon"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <p class="banner-button-title">Contact Support Team</p>
+          <p class="banner-button-desc">Get help with any questions or issues you're experiencing.</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </section>
 
   <!-- <ng-container *ngIf="!delivery?.compartment?.is_open"> -->
-  <ion-button>Unlock Compartment</ion-button>
+  <ion-button expand="block" size="large" class="unlock-button">Unlock Compartment</ion-button>
 </ion-content>
 
 <ng-template #emptyState>
