@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IonHeader, IonToolbar, IonBackButton, IonContent } from '@ionic/angular/standalone';
+import { IonBackButton, IonContent, IonHeader, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',

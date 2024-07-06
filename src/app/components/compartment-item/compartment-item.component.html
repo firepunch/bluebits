@@ -1,0 +1,9 @@
+<div class="compartment-item" *ngIf="contents">
+  <p class="compartment-title">{{title}}</p>
+  <div 
+    class="compartment-content" 
+    [class.compartment-highlight]="contents.length === 1" 
+    *ngFor="let content of contents">
+    <p>{{content}}</p>
+  </div>
+</div>
