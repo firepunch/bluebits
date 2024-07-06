@@ -50,28 +50,16 @@
   </section>
     
   <section class="banner-button-container">
-    <ion-grid class="banner-button-item ion-margin-vertical">
-      <ion-row class="ion-justify-content-center ion-align-items-center">
-        <ion-col size="auto" class="ion-padding-end">
-          <ion-icon name="home-outline" aria-hidden="true" class="banner-button-icon"></ion-icon>
-        </ion-col>
-        <ion-col>
-          <p class="banner-button-title">Register Your Unit</p>
-          <p class="banner-button-desc">Enable delivery to your specific unit by registering it with BlueBox.</p>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <ion-grid class="banner-button-item ion-margin-vertical">
-      <ion-row class="ion-justify-content-center ion-align-items-center">
-        <ion-col size="auto" class="ion-padding-end">
-          <ion-icon name="mail-outline" aria-hidden="true" class="banner-button-icon"></ion-icon>
-        </ion-col>
-        <ion-col>
-          <p class="banner-button-title">Contact Support Team</p>
-          <p class="banner-button-desc">Get help with any questions or issues you're experiencing.</p>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <banner-button
+      iconName="home-outline"
+      title="Register Your Unit"
+      desc="Enable delivery to your specific unit by registering it with BlueBox.">
+    </banner-button>
+    <banner-button 
+      iconName="mail-outline" 
+      title="Contact Support Team"
+      desc="Get help with any questions or issues you're experiencing.">
+    </banner-button>
   </section>
 
   <ng-container *ngIf="!delivery?.compartment?.is_open">
